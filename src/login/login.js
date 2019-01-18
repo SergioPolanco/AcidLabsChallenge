@@ -26,6 +26,11 @@ class Login extends React.Component {
         return this.state.password.length > 4 && validateEmail(this.state.email)
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        alert("Felicidades!")
+    }
+
     render = () => {
         return(
             <div className="login-box">
@@ -33,38 +38,38 @@ class Login extends React.Component {
                     <h3><strong>Acid Labs Challenge</strong></h3>
                 </div>
                 <div className="login-body">
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <div className='input-group'>
-                            <label htmlFor="email">Correo electronico:</label>
+                            <label htmlFor="email">Correo electrónico:</label>
                             <input
                                 onChange={this.handleInput}
                                 className="input-custom"
                                 type="email"
                                 name="email"
                                 id="email"
-                                placeholder="Type your email"
+                                placeholder="Escriba su correo electrónico"
                             />
                             {
                                 this.state.email != '' && !validateEmail(this.state.email) ?
                                 <span className="lbl-error">
-                                    Correo electronico invalido
+                                    Correo electrónico invalido
                                 </span> : void 0
                             }
                         </div>
                         <div className='input-group'>
-                            <label htmlFor="password">Password:</label>
+                            <label htmlFor="password">Contraseña:</label>
                             <input
                                 onChange={this.handleInput}
                                 className="input-custom"
                                 type="password"
                                 name="password"
                                 id="password"
-                                placeholder="Type your password"
+                                placeholder="Escriba su contraseña"
                             />
                             {
                                 this.state.password != '' && this.state.password.length <= 4 ?
                                 <span className="lbl-error">
-                                    La contraseña debe tener mas de 4 caracteres
+                                    La contraseña debe tener más de 4 caracteres
                                 </span> : void 0
                             }
                         </div>
@@ -74,7 +79,7 @@ class Login extends React.Component {
                                 type="submit"
                                 disabled={!this.validate()}
                             >
-                                Login
+                                Entrar
                             </button>
                         </div>
                     </form>
