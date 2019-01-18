@@ -1,0 +1,29 @@
+.login-box {
+    background-color: #F4F6F7;
+    width: 450px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.login-header {
+    background-color:  #2874A6   ;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#EBF5FB  ;
+}
+
+.login-body {
+    padding: 30px 20px 30px 20px;
+}
+
+.btn-login-container {
+    margin-top: 60px;
+}
+
+@media only screen and (max-width: 450px) {
+    .login-box {
+        width: 100%;
+    }
+}
